@@ -364,7 +364,7 @@ The backend is a Spring Boot REST API that handles authentication, users, tutors
 - JWT authentication
 - Spring Security configuration
 - Student, tutor, and admin role workflows
-- Microsoft SQL Server database integration using Spring Data JPA
+- MySQL database integration using Spring Data JPA
 - Booking management
 - Tutor review management
 - Application review support
@@ -387,13 +387,13 @@ http://localhost:10000
 
 ### Database Setup
 
-Create the SQL Server database:
+Create the MySQL database:
 
 ```sql
 CREATE DATABASE hometutor_database;
 ```
 
-Copy `.env.example` to `.env` and set the SQL Server and JWT credentials. The `.env` file is loaded automatically by Spring Boot and is ignored by Git.
+Copy `.env.example` to `.env` and set the MySQL and JWT credentials. The `.env` file is loaded automatically by Spring Boot and is ignored by Git.
 
 > Important: Do not commit real database passwords, JWT secrets, or SMTP credentials to GitHub. Use environment variables or a private local config for production.
 
@@ -414,10 +414,10 @@ The frontend deploys to Vercel and the backend deploys to Railway.
 - Set the service root directory to `back_end`.
 - Railway supplies `PORT`; the backend is configured to use it automatically.
 - Set `FRONTEND_URL` to the Vercel deployment URL.
-- Configure the `MSSQL_*`, `JWT_SECRET`, and `MAIL_*` environment variables in Railway.
+- Configure the Railway-provided `MYSQL*` variables, plus `JWT_SECRET` and `MAIL_*`, in Railway.
 - Verify the service with `/actuator/health`.
 
-Railway does not provide a native Microsoft SQL Server service. Use a reachable managed SQL Server instance such as Azure SQL, and restrict its firewall to trusted Railway egress where possible.
+Railway's MySQL service supplies the `MYSQLHOST`, `MYSQLPORT`, `MYSQLDATABASE`, `MYSQLUSER`, and `MYSQLPASSWORD` variables used by the backend.
 
 ---
 

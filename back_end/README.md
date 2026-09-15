@@ -1,7 +1,7 @@
 # Home Tutor Search and Booking System
 
 ## Overview
-This is a university Object-Oriented Programming (OOP) project implementing a web-based "Home Tutor Search and Booking System". It's built using Java, Spring Boot, Microsoft SQL Server, and JSP/HTML/CSS.
+This is a university Object-Oriented Programming (OOP) project implementing a web-based "Home Tutor Search and Booking System". It's built using Java, Spring Boot, MySQL, and JSP/HTML/CSS.
 
 ## Key Features
 - **Admin**: Dashboard to view and force-update global booking statuses.
@@ -14,18 +14,18 @@ This is a university Object-Oriented Programming (OOP) project implementing a we
 ## Tech Stack
 - **Backend:** Java 17, Spring Boot, Spring Data JPA
 - **Frontend:** JSP, HTML, Custom CSS (Glassmorphism theme)
-- **Database:** Microsoft SQL Server
+- **Database:** MySQL
 - **Custom DSA:** `MergeSort.java` and `BinarySearchTree.java`
 
 ## Setup & Running Instructions
 
 1. **Database Setup**
-    - Ensure Microsoft SQL Server is running on your system (`localhost:1433`).
+    - Ensure MySQL is running on your system (`localhost:3306`).
     - Create a database named `hometutor_database`:
      ```sql
        CREATE DATABASE hometutor_database;
      ```
-    - Copy the repository's `.env.example` to `.env` and set your SQL Server username and password.
+    - Copy the repository's `.env.example` to `.env` and set your MySQL username and password.
     - To enable OTP and password-reset emails, set `MAIL_ENABLED=true` and configure the `MAIL_*` values in `.env`.
 
 2. **Run the Application**
