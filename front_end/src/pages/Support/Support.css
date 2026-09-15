@@ -1,0 +1,149 @@
+/* ── Support Page ────────────────────────────────────────────────────────────── */
+.sup-hero { padding: 80px 0 60px; text-align: center; border-bottom: 1px solid var(--color-border); }
+.sup-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin: 12px 0; }
+.sup-hero p  { color: var(--color-text-muted); font-size: 1.05rem; }
+.sup-badge {
+  display: inline-block; padding: 4px 14px;
+  background: rgba(108,99,255,0.14); color: var(--color-primary);
+  border-radius: 99px; font-size: 0.8rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+.sup-body { padding: 60px 0 80px; display: flex; flex-direction: column; gap: 48px; }
+
+.sup-faqs h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 20px; }
+.sup-faq-list { display: flex; flex-direction: column; gap: 12px; }
+.sup-faq { padding: 0; overflow: hidden; }
+.sup-faq-q {
+  padding: 18px 24px;
+  font-weight: 600; font-size: 0.95rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: color var(--transition);
+}
+.sup-faq-q::after { content: '+'; font-size: 1.2rem; color: var(--color-primary); }
+details[open] .sup-faq-q::after { content: '−'; }
+.sup-faq-q:hover { color: var(--color-primary); }
+.sup-faq-a { padding: 0 24px 18px; color: var(--color-text-muted); line-height: 1.7; font-size: 0.92rem; }
+
+.sup-contact { padding: 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.sup-contact-info h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+.sup-contact-info p  { color: var(--color-text-muted); margin-bottom: 16px; }
+.sup-links { display: flex; flex-direction: column; gap: 8px; }
+.sup-link  { color: var(--color-primary); font-size: 0.95rem; font-weight: 500; transition: opacity var(--transition); }
+.sup-link:hover { opacity: 0.75; }
+
+/* Your Theme Variables */
+
+
+/* Base Wrapper for testing the background */
+.theme-wrapper {
+  background-color: var(--color-bg);
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Form Container */
+.contact-form {
+  background-color: #191925;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  /* box-shadow: var(--shadow-lg); */
+  width: 100%;
+  max-width:80%;
+  border: 1px solid var(--color-border);
+}
+
+.contact-form h2 {
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Status Messages */
+.status-msg {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-msg.success {
+  color: var(--color-success);
+}
+
+.status-msg.error {
+  color: var(--color-error);
+}

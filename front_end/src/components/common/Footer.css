@@ -1,0 +1,150 @@
+/* ── Footer ─────────────────────────────────────────────────────────────────── */
+.footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding-top: 56px;
+}
+.footer__inner {
+  display: flex;
+  gap: 48px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 48px;
+}
+.footer__brand { display: flex; flex-direction: column; gap: 12px; max-width: 280px; }
+.footer__logo  { font-size: 1.2rem; font-weight: 800; color: var(--color-text); }
+.footer__brand p { color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.65; }
+
+.footer__links { display: flex; gap: 48px; }
+.footer__col   { display: flex; flex-direction: column; gap: 10px; }
+.footer__col h4 { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-text-muted); margin-bottom: 4px; }
+.footer__col a  { color: var(--color-text-muted); font-size: 0.9rem; transition: color var(--transition); }
+.footer__col a:hover { color: var(--color-primary); }
+
+.footer__bottom {
+  border-top: 1px solid var(--color-border);
+  padding: 20px 24px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Feedback column ──────────────────────────────────────────────────────── */
+.footer__feedback-col { min-width: 200px; }
+
+.footer__feedback-tagline {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.footer__feedback-btn {
+  margin-top: 4px;
+  background: var(--color-primary, #6366f1);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  align-self: flex-start;
+}
+.footer__feedback-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* Animated form */
+.footer__feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  animation: fb-slide-down 0.25s ease;
+}
+@keyframes fb-slide-down {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Star row */
+.footer__stars { display: flex; gap: 4px; }
+.footer__star {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--color-border, #444);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s, transform 0.1s;
+  line-height: 1;
+}
+.footer__star--active,
+.footer__star:hover { color: #f59e0b; }
+.footer__star:hover { transform: scale(1.2); }
+
+/* Name / email inputs */
+.footer__feedback-input {
+  border: 1px solid var(--color-border, #333);
+  border-radius: 8px;
+  background: var(--color-bg, #0f0f16);
+  color: var(--color-text, #fff);
+  padding: 7px 10px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.footer__feedback-input:focus { border-color: var(--color-primary, #6366f1); }
+.footer__feedback-input::placeholder { color: var(--color-text-muted, #888); }
+
+/* Textarea */
+.footer__feedback-text {
+  resize: vertical;
+  border: 1px solid var(--color-border, #333);
+  border-radius: 8px;
+  background: var(--color-bg, #0f0f16);
+  color: var(--color-text, #fff);
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.footer__feedback-text:focus { border-color: var(--color-primary, #6366f1); }
+
+/* Error message */
+.footer__feedback-error {
+  font-size: 0.82rem;
+  color: #f87171;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Submit */
+.footer__feedback-submit {
+  align-self: flex-start;
+  background: var(--color-primary, #6366f1);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.footer__feedback-submit:disabled { opacity: 0.45; cursor: not-allowed; }
+.footer__feedback-submit:not(:disabled):hover { opacity: 0.85; }
+
+/* Thank-you */
+.footer__feedback-thanks {
+  font-size: 0.9rem;
+  color: #4ade80;
+  font-weight: 600;
+  margin: 0;
+  animation: fb-slide-down 0.25s ease;
+}

@@ -1,0 +1,8 @@
+target
+.idea
+.smarttomcat
+*.iml
+.env
+.git
+.gitignore
+README.md

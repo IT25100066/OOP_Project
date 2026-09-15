@@ -1,0 +1,242 @@
+/* ── Register Student Page ───────────────────────────────────────────────── */
+.rs-page {
+  min-height: 100vh;
+  padding: 60px 16px 80px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background blobs */
+.rs-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+.rs-blob-1 {
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, var(--color-primary), transparent 70%);
+  top: -100px; left: -120px;
+}
+.rs-blob-2 {
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, var(--color-accent), transparent 70%);
+  bottom: -80px; right: -100px;
+}
+
+.rs-container {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ────────────────────────────────────────────────────────────── */
+.rs-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rs-badge {
+  display: inline-block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 6px 18px;
+  background: rgba(108, 99, 255, 0.14);
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  border-radius: 99px;
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rs-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rs-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+/* ── Card / Form ────────────────────────────────────────────────────────── */
+.rs-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Sections ──────────────────────────────────────────────────────────── */
+.rs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rs-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.rs-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.rs-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Fields ─────────────────────────────────────────────────────────────── */
+.rs-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rs-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.rs-req {
+  color: var(--color-error, #ef4444);
+}
+
+/* Password wrapper with eye toggle */
+.rs-pw-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.rs-pw-wrap input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.rs-eye {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  color: var(--color-text-muted);
+  transition: opacity 0.2s;
+}
+
+.rs-eye:hover {
+  opacity: 0.7;
+}
+
+/* ── Divider ─────────────────────────────────────────────────────────────── */
+.rs-divider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ── Actions ─────────────────────────────────────────────────────────────── */
+.rs-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+/* ── Footer link ─────────────────────────────────────────────────────────── */
+.rs-footer {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-top: -8px;
+}
+
+.rs-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.rs-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* ── Success State ──────────────────────────────────────────────────────── */
+.rs-success {
+  max-width: 480px;
+  margin: 80px auto;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.rs-success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.rs-success h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.rs-success p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .rs-grid-2 { grid-template-columns: 1fr; }
+  .rs-card    { padding: 24px 16px; }
+  .rs-title   { font-size: 1.6rem; }
+}

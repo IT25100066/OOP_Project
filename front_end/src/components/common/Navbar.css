@@ -1,0 +1,89 @@
+/* ── Navbar ─────────────────────────────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: var(--navbar-h);
+  background: rgba(15,15,26,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Brand */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+.navbar__brand strong { color: var(--color-primary); }
+.navbar__brand-icon  { font-size: 1.4rem; }
+
+/* Desktop links */
+.navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+  flex: 1;
+}
+.navbar__link {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition), background var(--transition);
+}
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--color-text);
+  background: rgba(255,255,255,0.06);
+}
+.navbar__link--active { color: var(--color-primary); }
+
+/* CTA Buttons */
+.navbar__actions { display: flex; align-items: center; gap: 10px; }
+
+.navbar__btn { display: inline-flex; align-items: center; padding: 8px 18px; border-radius: var(--radius-sm); font-size: 0.88rem; font-weight: 600; transition: all var(--transition); white-space: nowrap; }
+
+.navbar__btn--ghost   { color: var(--color-text-muted); }
+.navbar__btn--ghost:hover { color: var(--color-text); background: rgba(255,255,255,0.05); }
+
+.navbar__btn--outline { background: transparent; border: 1.5px solid var(--color-border); color: var(--color-text-muted); }
+.navbar__btn--outline:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+.navbar__btn--primary { background: linear-gradient(135deg, var(--color-primary) 0%, #574fd6 100%); color: #fff; box-shadow: 0 2px 12px rgba(108,99,255,0.3); }
+.navbar__btn--primary:hover { transform: translateY(-1px); box-shadow: 0 4px 18px rgba(108,99,255,0.45); }
+
+/* Hamburger */
+.navbar__hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; background: none; }
+.navbar__hamburger span { display: block; width: 22px; height: 2px; background: var(--color-text-muted); border-radius: 2px; transition: all var(--transition); }
+.navbar__hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__hamburger--open span:nth-child(2) { opacity: 0; }
+.navbar__hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Drawer */
+.navbar__drawer { display: none; flex-direction: column; gap: 20px; padding: 20px 24px; background: var(--color-surface); border-top: 1px solid var(--color-border); }
+.navbar__drawer-links { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.navbar__dlink { display: block; padding: 10px 14px; border-radius: var(--radius-sm); color: var(--color-text-muted); font-size: 1rem; font-weight: 500; transition: all var(--transition); }
+.navbar__dlink:hover, .navbar__dlink--active { background: rgba(108,99,255,0.12); color: var(--color-primary); }
+.navbar__drawer-actions { display: flex; gap: 10px; }
+
+@media (max-width: 768px) {
+  .navbar__links, .navbar__actions { display: none; }
+  .navbar__hamburger { display: flex; margin-left: auto; }
+  .navbar__drawer--open { display: flex; }
+}

@@ -1,0 +1,242 @@
+/* ── Register Admin Page ───────────────────────────────────────────────── */
+.ra-page {
+  min-height: 100vh;
+  padding: 60px 16px 80px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background blobs */
+.ra-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+.ra-blob-1 {
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, #e91e63, transparent 70%);
+  top: -100px; left: -120px;
+}
+.ra-blob-2 {
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, #9c27b0, transparent 70%);
+  bottom: -80px; right: -100px;
+}
+
+.ra-container {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ────────────────────────────────────────────────────────────── */
+.ra-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ra-badge {
+  display: inline-block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 6px 18px;
+  background: rgba(233, 30, 99, 0.14);
+  border: 1px solid rgba(233, 30, 99, 0.3);
+  border-radius: 99px;
+  color: #e91e63;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ra-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e91e63, #9c27b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ra-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+/* ── Card / Form ────────────────────────────────────────────────────────── */
+.ra-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Sections ──────────────────────────────────────────────────────────── */
+.ra-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ra-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.ra-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e91e63, #9c27b0);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.ra-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Fields ─────────────────────────────────────────────────────────────── */
+.ra-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ra-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.ra-req {
+  color: var(--color-error, #ef4444);
+}
+
+/* Password wrapper with eye toggle */
+.ra-pw-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ra-pw-wrap input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.ra-eye {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  color: var(--color-text-muted);
+  transition: opacity 0.2s;
+}
+
+.ra-eye:hover {
+  opacity: 0.7;
+}
+
+/* ── Divider ─────────────────────────────────────────────────────────────── */
+.ra-divider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ── Actions ─────────────────────────────────────────────────────────────── */
+.ra-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+/* ── Footer link ─────────────────────────────────────────────────────────── */
+.ra-footer {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-top: -8px;
+}
+
+.ra-link {
+  color: #e91e63;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.ra-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* ── Success State ──────────────────────────────────────────────────────── */
+.ra-success {
+  max-width: 480px;
+  margin: 80px auto;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ra-success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e91e63, #9c27b0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.ra-success h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.ra-success p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .ra-grid-2 { grid-template-columns: 1fr; }
+  .ra-card    { padding: 24px 16px; }
+  .ra-title   { font-size: 1.6rem; }
+}

@@ -1,0 +1,46 @@
+/* ── Students Page ───────────────────────────────────────────────────────────── */
+.stu-hero { padding: 80px 0; border-bottom: 1px solid var(--color-border); }
+.stu-hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
+.stu-hero-text { display: flex; flex-direction: column; gap: 20px; }
+.stu-badge {
+  display: inline-block; width: fit-content;
+  padding: 5px 14px; background: rgba(0,191,165,0.14); color: var(--color-accent);
+  border-radius: 99px; font-size: 0.8rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.stu-hero-text h1 { font-size: clamp(2rem,4vw,3rem); font-weight: 800; line-height: 1.15; }
+.stu-hero-text p  { color: var(--color-text-muted); font-size: 1rem; line-height: 1.7; max-width: 480px; }
+
+.stu-hero-cards { display: flex; flex-direction: column; gap: 12px; }
+.stu-subj-pill {
+  padding: 14px 22px; font-size: 0.95rem; font-weight: 600;
+  text-align: center; white-space: nowrap;
+  animation: slideIn 0.5s ease both;
+}
+@keyframes slideIn { from { opacity:0; transform: translateX(24px); } to { opacity:1; transform: none; } }
+
+/* Benefits */
+.stu-benefits { padding: 100px 0; }
+.stu-section-title { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 48px; }
+.stu-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+.stu-card { padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: transform var(--transition), box-shadow var(--transition); }
+.stu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.stu-icon { font-size: 2.2rem; }
+.stu-card h3 { font-size: 1rem; font-weight: 700; }
+.stu-card p  { color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.65; }
+
+/* CTA */
+.stu-cta { padding: 80px 0; background: var(--color-surface); border-top: 1px solid var(--color-border); }
+.stu-cta-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.stu-cta-inner h2 { font-size: 1.8rem; font-weight: 800; }
+.stu-cta-inner p  { color: var(--color-text-muted); }
+
+@media (max-width: 900px) {
+  .stu-grid { grid-template-columns: repeat(2,1fr); }
+  .stu-hero-inner { grid-template-columns: 1fr; }
+  .stu-hero-cards { flex-direction: row; flex-wrap: wrap; }
+  .stu-subj-pill { min-width: 120px; }
+}
+@media (max-width: 600px) {
+  .stu-grid { grid-template-columns: 1fr; }
+}
